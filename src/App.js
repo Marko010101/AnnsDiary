@@ -30,7 +30,7 @@ export default function App() {
 function Header() {
   return (
     <div>
-      <h1>AnnsDiary 📓</h1>
+      <h1>AnnsDiary📓</h1>
     </div>
   );
 }

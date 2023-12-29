@@ -19,13 +19,16 @@ html {
 
 body {
   height: 100vh;
+  /* Combine linear gradient and background image */
   background: linear-gradient(
-    to bottom,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+      to bottom,
+      rgba(196, 142, 182, 0.4),
+      rgba(210, 35, 219, 0.5)
+    ),
+    url("/public/backgroundImage.avif") center/cover;
   padding: 2rem 3rem;
 }
+
 h1 {
   display: flex;
   justify-content: center;
