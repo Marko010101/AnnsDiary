@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const initialFriends = [
   {
     id: 118836,
@@ -6,13 +8,13 @@ const initialFriends = [
     date: "9 July , 2022",
   },
   {
-    id: 118836,
+    id: 120102,
     name: "Best day of my life",
     text: "Integer maximus lorem mauris, nec rhoncus ante condimentum vel. Ut ut arcu laoreet, viverra elit non, luctus sapien. Aliquam vitae euismod risus. Sed congue magna in molestie bibendum.",
     date: "3 Feb, 2023",
   },
   {
-    id: 118836,
+    id: 201200,
     name: "How i meet my GF",
     text: "Aliquam efficitur varius elit et egestas. Fusce condimentum congue sollicitudin. Cras finibus et nisl id ultricies. Morbi vel risus sit amet magna placerat facilisis. Cras sodales erat vestibulum ante dapibus ornare.",
     date: "2 Oct , 2023",
@@ -26,8 +28,40 @@ export default function App() {
       <div className="container">
         <StoryList />
         <AddToList />
-        <Story />
       </div>
+    </div>
+  );
+}
+
+function StoryList() {
+  return (
+    <div className="story-list">
+      {initialFriends.map((story) => (
+        <Story story={story} key={story.id} />
+      ))}
+    </div>
+  );
+}
+
+function AddToList() {
+  return <Button />;
+}
+
+function Story({ story }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="each-story" onClick={handleClick}>
+      <h2>{story.name}</h2>
+      {isOpen && (
+        <p>
+          {story.text} <span className="story-date">{story.date}</span>
+        </p>
+      )}
     </div>
   );
 }
@@ -40,20 +74,10 @@ function Header() {
   );
 }
 
-function StoryList() {
+function Button() {
   return (
-    <div className="story-list">
-      {initialFriends.map((story) => (
-        <div className="each-story">
-          <h2>{story.name}</h2>
-          <p>
-            {story.text} {story.date}
-          </p>
-        </div>
-      ))}
+    <div className="btn-container">
+      <button className="add-story-btn">Add new story</button>
     </div>
   );
 }
-function AddToList() {}
-
-function Story() {}
