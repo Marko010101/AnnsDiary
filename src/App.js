@@ -44,7 +44,15 @@ function StoryList() {
 }
 
 function AddToList() {
-  return <Button />;
+  return (
+    <div className="parent-container">
+      <form className="form-container">
+        <input className="input" type="text" />
+        <input className="input" type="text" />
+        <input className="input" type="text" />
+      </form>
+    </div>
+  );
 }
 
 function Story({ story }) {
