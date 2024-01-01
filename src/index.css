@@ -19,14 +19,26 @@ html {
 
 body {
   height: 100vh;
+  padding: 2rem 3rem;
+  overflow: hidden;
   background: linear-gradient(
       to bottom,
       rgba(220, 167, 206, 0.562),
       rgba(211, 38, 220, 0.582)
     ),
-    url("/public/backgroundImage.avif") center/cover;
+    url("/public/empty.avif") center/cover;
+}
+
+body.non-empty {
+  height: 100vh;
   padding: 2rem 3rem;
   overflow: hidden;
+  background: linear-gradient(
+      to bottom,
+      rgba(220, 167, 206, 0.562),
+      rgba(211, 38, 220, 0.582)
+    ),
+    url("/public/startedWriting.jpg") center/cover;
 }
 
 h1 {
@@ -62,6 +74,7 @@ h1 {
 }
 
 .each-story {
+  position: relative;
   padding: 1rem 3rem;
   margin-top: 1rem;
   font-size: 2rem;
@@ -94,7 +107,7 @@ h1 {
   letter-spacing: 2px;
   text-align: start;
 }
-.each-story span {
+.story-date {
   display: block;
   text-align: end;
   font-family: "Tangerine", sans-serif;
@@ -102,6 +115,15 @@ h1 {
 }
 .opened {
   background-color: rgba(196, 142, 182, 0.9);
+}
+
+.spanX {
+  position: absolute;
+  left: 96%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: #c21d7d;
 }
 
 .parent-container {

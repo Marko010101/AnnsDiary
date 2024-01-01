@@ -29,6 +29,14 @@ export default function App() {
     setStories(storedStories);
   }, []);
 
+  useEffect(() => {
+    if (stories.length > 0) {
+      document.body.classList.add("non-empty");
+    } else {
+      document.body.classList.remove("non-empty");
+    }
+  }, [stories]);
+
   const updateLocalStorage = (updatedStories) => {
     localStorage.setItem("stories", JSON.stringify(updatedStories));
   };
@@ -149,18 +157,17 @@ function Story({ story, onDelete }) {
       onClick={handleClick}
     >
       {isOpen ? (
-        <span
-          style={{ color: "#D30E5A", fontSize: "22px" }}
-          onClick={handleDelete}
-        >
-          &#10005;
-        </span>
-      ) : null}
-      <h2>{story.name}</h2>
-      {isOpen && (
-        <p>
-          {story.text} <span className="story-date">{story.date}</span>
-        </p>
+        <>
+          <span className="spanX" onClick={handleDelete}>
+            &#10005;
+          </span>
+          <h2>{story.name}</h2>
+          <p>
+            {story.text} <span className="story-date">{story.date}</span>
+          </p>
+        </>
+      ) : (
+        <h2>{story.name}</h2>
       )}
     </div>
   );
