@@ -67,7 +67,7 @@ h1 {
   font-size: 2rem;
   text-align: center;
   color: var(--color-dark);
-  background-color: rgba(196, 142, 182, 0.7);
+  background-color: rgba(196, 142, 182, 0.5);
   border-right: 1px solid var(--color-medium);
   border-radius: 10px;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
@@ -92,12 +92,16 @@ h1 {
   font-weight: 500;
   color: #4a0a4e;
   letter-spacing: 2px;
+  text-align: start;
 }
 .each-story span {
   display: block;
   text-align: end;
   font-family: "Tangerine", sans-serif;
   font-weight: 600;
+}
+.opened {
+  background-color: rgba(196, 142, 182, 0.9);
 }
 
 .parent-container {
@@ -109,7 +113,7 @@ h1 {
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 46.5rem;
 }
 .input {
   margin-top: 3rem;
@@ -117,6 +121,7 @@ h1 {
   border: none;
   border-radius: 1rem;
   background-color: #eabcdedd;
+  padding: 1rem;
 }
 .input:focus {
   outline: 3px solid rgba(221, 142, 212, 0.8);
@@ -134,13 +139,30 @@ h1 {
   border: none;
   border-radius: 1rem;
   background-color: var(--color-secondary);
-  color: var(--color-primary);
+  color: #d2aac7;
   cursor: pointer;
 
   transform: scaleX(0);
   transform-origin: center;
   animation: storyStretch 1.5s ease forwards;
   animation-delay: 0.5s;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-family: "The Girl Next Door", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #361244;
+}
+
+.form-text {
+  font-size: 1.5rem;
+  font-family: "Charmonman", sans-serif;
+  font-weight: 600;
+  color: #4a0a4e;
+  letter-spacing: 1.5px;
+  height: auto;
 }
 
 @keyframes translateTitle {
