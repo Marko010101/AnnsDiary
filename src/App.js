@@ -125,6 +125,8 @@ function AddToListForm({ addToStory }) {
               className="input form-text"
               placeholder="Write your story here"
               value={text}
+              rows={4}
+              cols={40}
               onChange={(e) => setText(e.target.value)}
             />
             <Button type="submit">Submit</Button>
