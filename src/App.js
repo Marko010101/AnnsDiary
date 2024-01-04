@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { CiEdit } from "react-icons/ci";
 
 // const initialStories = [
 //   {
@@ -160,9 +161,11 @@ function Story({ story, onDelete }) {
     >
       {isOpen ? (
         <>
-          <span className="spanX" onClick={handleDelete}>
-            &#10005;
+          <span className="icons">
+            <CiEdit className="second-icon" />
+            <span onClick={handleDelete}>&#10005;</span>
           </span>
+
           <h2>{story.name}</h2>
           <p>
             {story.text} <span className="story-date">{story.date}</span>

@@ -97,6 +97,20 @@ h1 {
   font-family: "The Girl Next Door", sans-serif;
   letter-spacing: 2px;
   font-weight: 600;
+  margin-right: 30px; /* Adjust this value based on your preference */
+}
+.each-story > .icons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 22px;
+  color: #c21d7d;
+}
+.each-story > .icons .second-icon {
+  color: #076e85; /* Color for the second icon */
 }
 
 .each-story p {
@@ -107,6 +121,7 @@ h1 {
   letter-spacing: 2px;
   text-align: start;
 }
+
 .story-date {
   display: block;
   text-align: end;
@@ -117,7 +132,7 @@ h1 {
   background-color: rgba(196, 142, 182, 0.9);
 }
 
-.spanX {
+/* .spanX {
   position: absolute;
   left: 96%;
   top: 15%;
@@ -125,6 +140,14 @@ h1 {
   font-size: 22px;
   color: #c21d7d;
 }
+.spanEdit {
+  position: absolute;
+  left: 96%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: #c21d7d;
+} */
 
 .parent-container {
   display: flex;
