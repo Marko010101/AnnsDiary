@@ -195,3 +195,63 @@ function Button({ onClick, children }) {
     </div>
   );
 }
+
+/* 
+function Story({ story, onDelete }) {
+  const [isOpen, setIsOpen] = useState(true);
+  const [editable, setEditable] = useState(false);
+  const [editedText, setEditedText] = useState(story.text);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleDelete = () => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this story?"
+    );
+    if (confirmDelete) {
+      onDelete(story.id);
+    }
+  };
+
+  const handleEditClick = () => {
+    setEditable(true);
+  };
+
+  const handleTextChange = (e) => {
+    setEditedText(e.target.innerText);
+  };
+
+  const handleSaveClick = () => {
+    setEditable(false);
+    // You can save the edited text or perform any other action here
+  };
+
+  return (
+    <div
+      className={isOpen ? "each-story opened" : "each-story"}
+      // onClick={handleClick}
+    >
+      {isOpen ? (
+        <>
+          <span className="icons">
+            <CiEdit className="second-icon" onClick={handleEditClick} />
+            <span onClick={handleDelete}>&#10005;</span>
+          </span>
+
+          <h2>{story.name}</h2>
+          <p
+            contentEditable={editable}
+            onInput={handleTextChange}
+            onBlur={handleSaveClick}
+            dangerouslySetInnerHTML={{ __html: editedText }}
+          />
+          <span className="story-date">{story.date}</span>
+        </>
+      ) : (
+        <h2>{story.name}</h2>
+      )}
+    </div>
+  );
+} */
